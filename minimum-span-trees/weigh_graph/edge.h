@@ -25,10 +25,10 @@ public:
         out << e.a << "-" << e.b << ": " << e.weight << "\n";
         return out;
     }
-    bool operator<(edge<Weight> &e) { return weight > e.wt(); }
-    bool operator<=(edge<Weight> &e) { return weight >= e.wt(); }
-    bool operator>(edge<Weight> &e) { return weight < e.wt(); }
-    bool operator>=(edge<Weight> &e) { return weight <= e.wt(); }
+    bool operator<(edge<Weight> &e) { return weight < e.wt(); }
+    bool operator<=(edge<Weight> &e) { return weight <= e.wt(); }
+    bool operator>(edge<Weight> &e) { return weight > e.wt(); }
+    bool operator>=(edge<Weight> &e) { return weight >= e.wt(); }
     bool operator==(edge<Weight> &e) { return weight == e.wt(); }
-
+    edge operator-() { return edge(a, b, -weight); }
 };
