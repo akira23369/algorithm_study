@@ -20,15 +20,15 @@ public:
         assert(x == a || x == b);
         return x == a ? b : a;
     }
-    friend std::ostream operator<<(std::ostream out, const edge<Weight> &e)
+    friend std::ostream& operator<<(std::ostream& out, const edge<Weight> &e)
     {
         out << e.a << "-" << e.b << ": " << e.weight << "\n";
         return out;
     }
-    bool operator<(edge<Weight> &e) { return weight < e.wt(); }
-    bool operator<=(edge<Weight> &e) { return weight <= e.wt(); }
-    bool operator>(edge<Weight> &e) { return weight > e.wt(); }
-    bool operator>=(edge<Weight> &e) { return weight >= e.wt(); }
+    bool operator<(edge<Weight> &e) { return weight > e.wt(); }
+    bool operator<=(edge<Weight> &e) { return weight >= e.wt(); }
+    bool operator>(edge<Weight> &e) { return weight < e.wt(); }
+    bool operator>=(edge<Weight> &e) { return weight <= e.wt(); }
     bool operator==(edge<Weight> &e) { return weight == e.wt(); }
 
 };

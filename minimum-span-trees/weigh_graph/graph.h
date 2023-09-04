@@ -29,6 +29,7 @@ public:
                 delete g[i][j];
     }
     int v() { return n; }
+    int e() { return m; }
     void add_edge(int v, int w, Weight wt)
     {
         assert(v >= 0 && v < n);
